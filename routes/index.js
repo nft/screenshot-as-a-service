@@ -14,6 +14,8 @@ module.exports = function(app, useCors) {
       return res.redirect('/usage.html');
     }
 
+    if (req.param('url') === 'favicon.ico') return;
+
     var url = utils.url(req.param('url'));
     // required options
     var options = {
